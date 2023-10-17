@@ -51,7 +51,7 @@ public class CustomerServiceImpl implements CustomerServiceDef{
 	
 	@Override
 	public Intervention bookIntervention(long user_id, LocalDate interventionDate) {
-		Apartment apartment=apartmentRepo.findApartmentByCustomer_id(user_id));
+		Apartment apartment=apartmentRepo.findApartmentByCustomer_id(user_id).get();
 		Intervention intervention=new Intervention();
 		intervention.setApartment(apartment);
 		intervention.setStatus(StatusIntervention.PENDING);
